@@ -1,19 +1,20 @@
-# pdfmonkey-on-dotnet
+# ReadMe
 
 Sample code of a Program.cs file with all methods called
 
-namespace PDFMonkeyOnDotnet
-{
+# Program.cs
+
     using PDFMonkeyCaller;
     using Entities;
     using System.Text;
-
+    
     internal class Program
     {
-        private static string apiSecret = "XXXXXXxxxxxXXXXXxxxxxXXXX";
+        private static string apiSecret = "XxxXXXxxXxXxXxXXx-XxxXXx";
         private static string pdfDestinationPath = @"c:\temp\";
-        private static Guid documentId = Guid.Parse("XxxxXXX-XxxxX-XXxx-XXxx-XXxxXXxxXXX");
-        private static Guid documentTemplateId = Guid.Parse("XxxxXXX-XxxxX-XXxx-XXxx-XXxxXXxxXXX");
+        private static Guid documentId = Guid.Parse("XxxxXXXxxXX-XxXx-XXxXx-XXXxX-XXxxXXXXXXXxx");
+        private static Guid documentTemplateId = Guid.Parse("XxxxXXXxxXX-XxXx-XXxXx-XXXxX-XXxxXXXXXXXxx");
+
 
         static async Task Main()
         {
@@ -31,6 +32,8 @@ namespace PDFMonkeyOnDotnet
             
             // Create a simple Document and download the PDF file.
             await CreateDocumentAndDownloadPDFfile(caller, documentTemplateId, pdfDestinationPath);
+            
+           
         }
 
         private static async Task CreateDocumentAndDownloadPDFfile(PDFMonkeyCaller caller, Guid documentTemplateId, string downloadPath)
@@ -94,4 +97,3 @@ namespace PDFMonkeyOnDotnet
             var docCard = await caller.GetDocumentCard(documentId);
         }
     }
-}
